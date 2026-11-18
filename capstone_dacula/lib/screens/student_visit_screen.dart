@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
+import '../models/clinic_visit.dart';
+import '../models/clinic_visit_data.dart';
 
 class StudentVisitScreen extends StatefulWidget {
   const StudentVisitScreen({super.key});
 
   @override
-  State<StudentVisitScreen> createState() =>
-      _StudentVisitScreenState();
+  State<StudentVisitScreen> createState() => _StudentVisitScreenState();
 }
 
 class _StudentVisitScreenState extends State<StudentVisitScreen> {
@@ -32,9 +33,19 @@ class _StudentVisitScreenState extends State<StudentVisitScreen> {
       return;
     }
 
-    setState(() {
-      _submittedTime = DateTime.now();
-    });
+    final submittedTime = DateTime.now();
+
+  ClinicVisitData.visits.add(
+    ClinicVisit(
+      studentId: _studentIdController.text.trim(),
+      symptom: _symptomController.text.trim(),
+      timestamp: submittedTime,
+    ),
+  );
+
+  setState(() {
+    _submittedTime = submittedTime;
+  });
 
     showDialog(
       context: context,

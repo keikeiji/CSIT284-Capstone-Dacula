@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'screens/student_visit_screen.dart';
 import 'screens/nurse_queue_screen.dart';
-import 'widgets/access_card.dart';
 
 void main() {
   runApp(const ClinicVisitApp());
