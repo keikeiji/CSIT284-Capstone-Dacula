@@ -1,5 +1,8 @@
-
 import 'package:flutter/material.dart';
+
+import 'screens/student_visit_screen.dart';
+import 'screens/nurse_queue_screen.dart';
+import 'widgets/access_card.dart';
 
 void main() {
   runApp(const ClinicVisitApp());
@@ -132,9 +135,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PlaceholderScreen(
-                        title: 'Student Visit Form',
-                      ),
+                      builder: (context) => const StudentVisitScreen(),
                     ),
                   );
                 },
@@ -153,9 +154,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PlaceholderScreen(
-                        title: 'Nurse Queue',
-                      ),
+                      builder: (context) => const NurseQueueScreen(),
                     ),
                   );
                 },
@@ -167,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                 child: Text(
                   'Clinic Visit Log • CSIT284',
                   style: TextStyle(
-                    color: AppColors.darkBrown.withOpacity(0.6),
+                    color: AppColors.darkBrown.withValues(alpha: 0.6),
                     fontSize: 12,
                   ),
                 ),
@@ -265,7 +264,7 @@ class PlaceholderScreen extends StatelessWidget {
 
   const PlaceholderScreen({
     super.key,
-    required this.title,
+    required this.title,S
   });
 
   @override
